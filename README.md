@@ -1,2 +1,7 @@
 # Discord-oAuth2
-Discord OAuth Forcing People to Join Servers
+
+
+The bot is missing a refresh_token, if you add it, you can use it nicely. Also, you can add a proxy.
+
+instagram: hashkatzz
+discord: stack91
