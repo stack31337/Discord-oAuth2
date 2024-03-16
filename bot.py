@@ -240,7 +240,7 @@ async def link(ctx):
         return
     
     embed = discord.Embed()
-    embed.set_footer(text="https://discord.com/api/oauth2/authorize?client_id=1193545246735335486&permissions=8&scope=bot")
+    embed.set_footer(text="") # add your bot invite link here
     await ctx.send(embed=embed)
 
 @bot.event
