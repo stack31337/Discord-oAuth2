@@ -9,4 +9,4 @@ The bot is missing a refresh_token, if you add it, you can use it nicely. Also, 
 # Social
 instagram: hashkatzz
 
-discord: stack91
+discord: l9stack
