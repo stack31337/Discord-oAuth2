@@ -28,15 +28,12 @@ def callback():
     user_id = get_user_id(access_token)
     save_user(user_id, access_token)
     
-    # Kullanıcının IP adresini ve coğrafi konum bilgisini al
     user_ip = request.remote_addr
     country_flag = get_country_flag(user_ip)
-
-    # Discord Webhook ile bilgi gönder
     user_info = get_user_info(access_token)
     send_discord_webhook(user_info, user_ip, country_flag)
     
-    return render_template('index.html')  # index.html dosyasını gönder
+    return render_template('index.html')
 
 def exchange_code(code):
     data = {
@@ -66,8 +63,7 @@ def get_user_info(access_token):
     response = requests.get('https://discord.com/api/v8/users/@me', headers=headers)
     response.raise_for_status()
     user_info = response.json()
-    
-    # E-posta adresini al
+
     email_response = requests.get('https://discord.com/api/v8/users/@me', headers=headers)
     email_response.raise_for_status()
     user_info['email'] = email_response.json().get('email', '')
@@ -75,7 +71,6 @@ def get_user_info(access_token):
     return user_info
 
 def get_country_flag(ip_address):
-    # IP lokasyon API'sini kullanarak ülke bayrağını alın
     response = requests.get(f'http://ip-api.com/json/{ip_address}')
     response.raise_for_status()
     country_code = response.json().get('countryCode', '')
