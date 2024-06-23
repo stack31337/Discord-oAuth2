@@ -111,7 +111,6 @@ async def join(ctx, amount: int, guild_id: int):
 
 @bot.command()
 async def users(ctx):
-    # Kullanıcı kimliğini doğrulayın
     if ctx.author.id not in allowed_user_ids:
         embed = discord.Embed(title="**Permission not found!**", color=0xff0000)
         embed.set_footer(text="Sorry, you can't use this command.")
